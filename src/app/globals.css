@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #08080a;
+  --foreground: #f6f4ee;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--background);
+  color: var(--foreground);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #08080a;
+  color: #f6f4ee;
+  font-family: var(--font-sans), sans-serif;
+  selection-background-color: #c5a059;
+  selection-color: #08080a;
+}
+
+::selection {
+  background: #c5a059;
+  color: #08080a;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08080a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a30;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a059;
+}
+
+/* Subtle editorial film grain */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Luxury border styling */
+.editorial-border {
+  border-color: rgba(246, 244, 238, 0.08);
+}
+
+.gold-glow {
+  text-shadow: 0 0 30px rgba(197, 160, 89, 0.25);
+}
+
+/* Text stroke utility */
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(246, 244, 238, 0.3);
+  color: transparent;
+  transition: all 0.5s ease;
+}
+
+.text-stroke:hover {
+  -webkit-text-stroke: 1px rgba(212, 175, 55, 0.8);
+  color: rgba(246, 244, 238, 0.1);
+}
+
+/* Hide default cursor on desktop when custom cursor is active */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor-enabled,
+  .custom-cursor-enabled * {
+    cursor: none !important;
+  }
+}
+
+/* Smooth transitions */
+.transition-editorial {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Audio equalizer bars animations */
+@keyframes soundBar1 {
+  0%, 100% { height: 4px; }
+  50% { height: 16px; }
+}
+
+@keyframes soundBar2 {
+  0%, 100% { height: 14px; }
+  50% { height: 6px; }
+}
+
+@keyframes soundBar3 {
+  0%, 100% { height: 7px; }
+  50% { height: 18px; }
+}
+
+@keyframes soundBar4 {
+  0%, 100% { height: 16px; }
+  50% { height: 5px; }
+}
+
+.animate-bar-1 {
+  animation: soundBar1 1.1s ease-in-out infinite;
+}
+
+.animate-bar-2 {
+  animation: soundBar2 0.85s ease-in-out infinite;
+}
+
+.animate-bar-3 {
+  animation: soundBar3 1.25s ease-in-out infinite;
+}
+
+.animate-bar-4 {
+  animation: soundBar4 0.95s ease-in-out infinite;
+}
+
